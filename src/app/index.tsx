@@ -1,6 +1,9 @@
-import { Text, View } from "react-native";
+import { Alert, Button, Text, View } from "react-native";
 
 function HomeScreen() {
+  const pressMe = () => {
+    Alert.alert("Button Pressed!");
+  };
   return (
     <View>
       <Text
@@ -13,6 +16,7 @@ function HomeScreen() {
       >
         Home Screen
       </Text>
+      <Button title="Click Me" onPress={pressMe} />
     </View>
   );
 }
