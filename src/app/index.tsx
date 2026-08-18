@@ -1,15 +1,20 @@
 import { Text, View } from "react-native";
 
-export default function TabOneScreen() {
+function HomeScreen() {
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Text>Hello World </Text>
+    <View>
+      <Text
+        style={{
+          fontSize: 20,
+          fontWeight: "bold",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        Home Screen
+      </Text>
     </View>
   );
 }
+
+export default HomeScreen;
