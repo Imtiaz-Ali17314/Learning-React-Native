@@ -1,6 +1,10 @@
-import { Alert, Button, Text, View } from "react-native";
+import { useState } from "react";
+import { Alert, Button, Switch, Text, View } from "react-native";
 
 function HomeScreen() {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
+
   const pressMe = () => {
     Alert.alert("Button Pressed!");
   };
@@ -17,6 +21,7 @@ function HomeScreen() {
         Home Screen
       </Text>
       <Button title="Click Me" onPress={pressMe} />
+      <Switch onValueChange={toggleSwitch} value={isEnabled} />
     </View>
   );
 }
