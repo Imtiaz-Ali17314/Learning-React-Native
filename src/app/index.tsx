@@ -43,7 +43,7 @@ function HomeScreen() {
           numberOfLines={4}
         />
 
-        <Pressable onPressOut={onPressFunction}>
+        <Pressable onLongPress={onPressFunction}>
           <Text>Press Me</Text>
         </Pressable>
       </>
