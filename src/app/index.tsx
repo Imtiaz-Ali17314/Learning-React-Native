@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Alert, ScrollView, TextInput } from "react-native";
+import { Alert, Pressable, ScrollView, Text, TextInput } from "react-native";
 
 function HomeScreen() {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -8,6 +8,10 @@ function HomeScreen() {
 
   const pressMe = () => {
     Alert.alert("Button Pressed!");
+  };
+
+  const onPressFunction = () => {
+    alert("You entered: " + text);
   };
   return (
     <ScrollView>
@@ -28,15 +32,21 @@ function HomeScreen() {
       </Text>
       <Button title="Click Me" onPress={pressMe} />
       <Switch onValueChange={toggleSwitch} value={isEnabled} /> */}
-      <TextInput
-        style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
-        placeholder="Enter text here........"
-        value={text}
-        onChangeText={setText}
-        keyboardType="default"
-        multiline
-        numberOfLines={4}
-      />
+      <>
+        <TextInput
+          style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
+          placeholder="Enter text here........"
+          value={text}
+          onChangeText={setText}
+          keyboardType="default"
+          multiline
+          numberOfLines={4}
+        />
+
+        <Pressable onPressOut={onPressFunction}>
+          <Text>Press Me</Text>
+        </Pressable>
+      </>
     </ScrollView>
   );
 }
