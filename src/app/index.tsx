@@ -30,10 +30,12 @@ function HomeScreen() {
       <Switch onValueChange={toggleSwitch} value={isEnabled} /> */}
       <TextInput
         style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
-        placeholder="Enter text here"
+        placeholder="Enter text here........"
         value={text}
         onChangeText={setText}
-        keyboardType="phone-pad"
+        keyboardType="default"
+        multiline
+        numberOfLines={4}
       />
     </ScrollView>
   );
