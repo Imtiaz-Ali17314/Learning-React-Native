@@ -2,8 +2,10 @@ import { useState } from "react";
 import {
   Alert,
   Image,
+  ImageBackground,
   Pressable,
   ScrollView,
+  StyleSheet,
   Text,
   TextInput,
 } from "react-native";
@@ -20,6 +22,8 @@ function HomeScreen() {
   const onPressFunction = () => {
     alert("You entered: " + text);
   };
+
+  const image = { uri: "https://legacy.reactjs.org/logo-og.png" };
   return (
     <ScrollView>
       {/* {[...Array(60)].map((_, i) => (
@@ -61,8 +65,30 @@ function HomeScreen() {
         style={{ width: 100, height: 100 }}
         resizeMode="stretch"
       />
+
+      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+        <Text style={styles.text}>Inside</Text>
+      </ImageBackground>
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  image: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  text: {
+    color: "white",
+    fontSize: 42,
+    lineHeight: 84,
+    fontWeight: "bold",
+    textAlign: "center",
+    backgroundColor: "#000000c0",
+  },
+});
 
 export default HomeScreen;
