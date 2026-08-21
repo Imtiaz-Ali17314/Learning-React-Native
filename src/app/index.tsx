@@ -101,6 +101,8 @@ function HomeScreen() {
           data={DATA}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => <Item title={item.title} />}
+          horizontal
+          showsHorizontalScrollIndicator={false}
         />
       </SafeAreaView>
     </SafeAreaProvider>
